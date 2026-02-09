@@ -1,82 +1,16 @@
-* {
-  box-sizing: border-box;
+const slider = document.getElementById("guessSlider");
+const text = document.getElementById("answerText");
+
+const answers = {
+  1: "A subtle flex that I can build a website 😌",
+  2: "Something I made because I’m a little unhinged 🙃",
+  3: "A small thing I wanted to make just for you 🙂",
+  4: "A cry for help — I’ve clearly overthought this 🫠"
+};
+
+function updateText() {
+  text.textContent = answers[slider.value];
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.intro-question {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  padding: 40px 30px;
-  border-radius: 18px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 0.8s ease;
-}
-
-h1 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.answers {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.answers button {
-  width: 100%;
-  padding: 14px 16px;
-  background: linear-gradient(180deg, #1f1f1f, #141414);
-  color: white;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 15px;
-  text-align: left;
-
-  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.answers button:hover {
-  transform: translateY(-2px);
-  background: #262626;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
-}
-
-.answers button.selected {
-  background: linear-gradient(135deg, #b00020, #ff4d6d);
-  border-color: transparent;
-  box-shadow: 0 10px 25px rgba(176, 0, 32, 0.5);
-}
-
-#finalAnswer {
-  margin-top: 30px;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  color: #ffb3c1;
-}
-
-/* subtle entrance animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    op
+slider.addEventListener("input", updateText);
+updateText();
