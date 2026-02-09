@@ -1,16 +1,10 @@
-const slider = document.getElementById("guessSlider");
-const text = document.getElementById("answerText");
+function pick(button) {
+  const buttons = document.querySelectorAll(".answers button");
+  buttons.forEach(b => b.classList.remove("selected"));
 
-const answers = {
-  1: "A subtle flex that I can build a website 😌",
-  2: "Something I made because I’m a little unhinged 🙃",
-  3: "A small thing I wanted to make just for you 🙂",
-  4: "A cry for help — I’ve clearly overthought this 🫠"
-};
+  button.classList.add("selected");
 
-function updateText() {
-  text.textContent = answers[slider.value];
+  const final = document.getElementById("finalAnswer");
+  final.textContent = "Honestly? All of the above 🙂";
+  final.style.opacity = 1;
 }
-
-slider.addEventListener("input", updateText);
-updateText();
