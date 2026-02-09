@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Little Surprise</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- SECTION 1 -->
   <section class="intro-question">
     <h1>What do you think this is?</h1>
 
@@ -21,27 +20,28 @@
     </div>
 
     <p id="finalAnswer"></p>
+
+    <button id="continueBtn" onclick="continueStory()">
+      Okay… want to keep going?
+    </button>
   </section>
 
-  <!-- JS -->
+  <!-- SECTION 2 (HIDDEN AT FIRST) -->
+  <section id="nextSection">
+    <h2>
+      I had a feeling you’d click that 😄<br><br>
+      This is fun… maybe a little dangerous.<br>
+      Should we keep going?
+    </h2>
+
+    <div class="answers">
+      <button onclick="finalPick('yes')">Yes, let’s keep going 🙂</button>
+      <button onclick="finalPick('slow')">Maybe… let’s slow it down 😌</button>
+    </div>
+
+    <p id="finalMessage"></p>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
-<button id="continueBtn" onclick="continueStory()">
-  Okay… want to keep going?
-</button>
-
-<section id="nextSection">
-  <h2>
-    I had a feeling you’d click that 😄<br><br>
-    This is fun… maybe a little dangerous.<br>
-    Should we keep going?
-  </h2>
-
-  <div class="answers">
-    <button onclick="finalPick('yes')">Yes, let’s keep going 🙂</button>
-    <button onclick="finalPick('slow')">Maybe… let’s slow it down 😌</button>
-  </div>
-
-  <p id="finalMessage"></p>
-</section>
