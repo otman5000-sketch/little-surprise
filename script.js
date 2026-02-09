@@ -1,15 +1,5 @@
 function pick(button) {
-  const buttons = document.querySelectorAll(".answers button");
-  buttons.forEach(b => b.classList.remove("selected"));
-
-  button.classList.add("selected");
-
-  const final = document.getElementById("finalAnswer");
-  final.textContent = "Honestly? All of the above 🙂";
-  final.style.opacity = 1;
-}
-function pick(button) {
-  const buttons = document.querySelectorAll(".answers button");
+  const buttons = document.querySelectorAll(".intro-question .answers button");
   buttons.forEach(b => b.classList.remove("selected"));
 
   button.classList.add("selected");
@@ -18,11 +8,16 @@ function pick(button) {
   final.textContent = "Honestly? All of the above 🙂";
   final.style.opacity = 1;
 
-  document.getElementById("continueBtn").style.opacity = 1;
+  const continueBtn = document.getElementById("continueBtn");
+  continueBtn.style.opacity = 1;
+  continueBtn.style.pointerEvents = "auto";
 }
 
 function continueStory() {
-  document.getElementById("nextSection").scrollIntoView({
+  const next = document.getElementById("nextSection");
+  next.style.display = "block";
+
+  next.scrollIntoView({
     behavior: "smooth"
   });
 }
@@ -32,10 +27,10 @@ function finalPick(choice) {
 
   if (choice === "yes") {
     msg.textContent =
-      "I like that 🙂\nNo pressure. Just two people enjoying the moment.";
+      "I like that 🙂\nNo pressure.\nJust two people enjoying the moment.";
   } else {
     msg.textContent =
-      "That’s okay too 😌\nGood things don’t need to be rushed.";
+      "That’s totally okay 😌\nGood things don’t need to be rushed.";
   }
 
   msg.style.opacity = 1;
