@@ -9,27 +9,27 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+  background: radial-gradient(circle at top left, #1f2a2e, #0b0b0b);
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .intro-question {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  padding: 40px 30px;
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  padding: 42px 32px;
+  border-radius: 22px;
   width: 90%;
   max-width: 420px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
   text-align: center;
-  animation: fadeIn 0.8s ease;
+  animation: fadeIn 1s ease;
 }
 
 h1 {
   font-size: 26px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .answers {
@@ -41,43 +41,43 @@ h1 {
 
 .answers button {
   width: 100%;
-  padding: 14px 16px;
-  background: linear-gradient(180deg, #1f1f1f, #141414);
+  padding: 15px 18px;
+  background: linear-gradient(180deg, #1e1e1e, #141414);
   color: white;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
+  border: 1px solid #2f2f2f;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 15px;
   text-align: left;
 
-  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .answers button:hover {
-  transform: translateY(-2px);
-  background: #262626;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px) scale(1.01);
+  background: #2a2a2a;
 }
 
 .answers button.selected {
-  background: linear-gradient(135deg, #b00020, #ff4d6d);
-  border-color: transparent;
-  box-shadow: 0 10px 25px rgba(176, 0, 32, 0.5);
+  background: linear-gradient(135deg, #ff7a7a, #ffb199);
+  color: #1a1a1a;
+  border: none;
+  box-shadow: 0 12px 30px rgba(255, 122, 122, 0.5);
 }
 
 #finalAnswer {
-  margin-top: 30px;
+  margin-top: 32px;
   font-size: 18px;
   opacity: 0;
-  transition: opacity 0.4s ease;
-  color: #ffb3c1;
+  transition: opacity 0.5s ease;
+  color: #ffbfbf;
 }
 
-/* Animation */
+/* Soft entrance animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
