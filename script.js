@@ -25,7 +25,7 @@ function continueStory() {
 function finalPick(choice) {
   const msg = document.getElementById("finalMessage");
 
-  if (choice === "yes") {
+  if (choice === "Keep going") {
     msg.textContent =
       "I promise you’ll be smiling by the end of this";
   } else {
