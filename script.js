@@ -16,10 +16,7 @@ function pick(button) {
 function continueStory() {
   const next = document.getElementById("nextSection");
   next.style.display = "block";
-
-  next.scrollIntoView({
-    behavior: "smooth"
-  });
+  next.scrollIntoView({ behavior: "smooth" });
 }
 
 function finalPick() {
@@ -35,9 +32,13 @@ function finalPick() {
   }, 400);
 }
 
-function revealNext() {
-  const reveal = document.getElementById("revealText");
-  reveal.textContent =
-    "Someone who sees you clearly. Someone who isn’t intimidated by your depth — but drawn to it.";
-  reveal.style.opacity = 1;
+function revealFox() {
+  const fox = document.getElementById("foxSection");
+  fox.style.display = "block";
+
+  setTimeout(() => {
+    fox.scrollIntoView({ behavior: "smooth" });
+  }, 300);
 }
+
+function chooseYes() {
