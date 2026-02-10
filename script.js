@@ -37,15 +37,12 @@ function goToChoice() {
 function chooseYes() {
   const result = document.getElementById("choiceResult");
   result.textContent =
-    "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+    "Yeah… I knew it 🙂";
   result.style.opacity = 1;
 
   const story = document.getElementById("finalStory");
   story.style.display = "block";
-
-  setTimeout(() => {
-    story.scrollIntoView({ behavior: "smooth" });
-  }, 600);
+  story.scrollIntoView({ behavior: "smooth" });
 }
 
 function chooseNo() {
@@ -53,4 +50,10 @@ function chooseNo() {
   result.textContent =
     "That’s okay. Some things are powerful enough just to be seen.";
   result.style.opacity = 1;
+}
+
+function showContinueMemory() {
+  const section = document.getElementById("continueMemory");
+  section.style.display = "block";
+  section.scrollIntoView({ behavior: "smooth" });
 }
