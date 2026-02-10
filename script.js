@@ -1,86 +1,88 @@
-// Send feedback with Formspree
-function sendFeedback(buttonName) {
-  const form = document.getElementById("feedbackForm");
-  const hiddenInput = document.getElementById("buttonClicked");
-
-  hiddenInput.value = buttonName;
-
-  fetch(form.action, {
-    method: form.method,
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: new URLSearchParams(new FormData(form))
-  })
-  .then(response => {
-    if (response.ok) {
-      alert(`Feedback sent for button: "${buttonName}"! 🎉`);
-      return response.json();
-    } else {
-      throw new Error("Network response was not ok");
-    }
-  })
-  .catch(error => {
-    alert("Oops! Something went wrong sending your feedback.");
-    console.error("Form submission error:", error);
-  });
-}
-
-// Handlers for all buttons:
-
+// Function called by all buttons to pick an answer
 function pick(button) {
-  document.getElementById("finalAnswer").textContent = button.textContent;
-  sendFeedback(button.textContent);
-  // Show next section
-  document.getElementById("nextSection").style.display = "block";
+  const answerText = button.textContent || button.innerText;
+
+  // Show feedback on page
+  const finalAnswer = document.getElementById('finalAnswer');
+  finalAnswer.textContent = "You clicked: " + answerText;
+  finalAnswer.style.opacity = 1;
+
+  // Set hidden form input and submit
+  document.getElementById('buttonClicked').value = answerText;
+  document.getElementById('feedbackForm').submit();
+
+  console.log("Feedback sent: " + answerText);
 }
 
-function continueStory(button) {
-  sendFeedback(button.textContent);
-  // Show next section(s)
-  document.getElementById("nextSection").style.display = "none";
-  document.getElementById("memorySection").style.display = "block";
+// Continue to next section
+function continueStory() {
+  const next = document.getElementById('nextSection');
+  next.style.display = 'block';
+  next.scrollIntoView({ behavior: 'smooth' });
 }
 
+// Section 2 buttons
 function finalPick(button) {
-  document.getElementById("finalMessage").textContent = button.textContent;
-  sendFeedback(button.textContent);
-  // Show next section
-  document.getElementById("memorySection").style.display = "none";
-  document.getElementById("choiceSection").style.display = "block";
+  const msg = document.getElementById('finalMessage');
+  msg.textContent = "Good choice. This part matters.";
+  msg.style.opacity = 1;
+
+  document.getElementById('memorySection').style.display = 'block';
+  document.getElementById('memorySection').scrollIntoView({ behavior: 'smooth' });
+
+  // Send feedback for this button
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Go to choice section
 function goToChoice(button) {
-  sendFeedback(button.textContent);
-  // Show choice section
-  document.getElementById("choiceSection").style.display = "block";
+  document.getElementById('choiceSection').style.display = 'block';
+  document.getElementById('choiceSection').scrollIntoView({ behavior: 'smooth' });
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Choice yes/no buttons
 function chooseYes(button) {
-  sendFeedback(button.textContent);
-  document.getElementById("choiceResult").textContent = "Great! You’re brave.";
-  // Show final story section
-  document.getElementById("choiceSection").style.display = "none";
-  document.getElementById("finalStory").style.display = "block";
+  document.getElementById('choiceResult').textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+  document.getElementById('choiceResult').style.opacity = 1;
+
+  document.getElementById('finalStory').style.display = 'block';
+  setTimeout(() => { document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' }); }, 600);
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
 function chooseNo(button) {
-  sendFeedback(button.textContent);
-  document.getElementById("choiceResult").textContent = "No worries, maybe next time.";
-  // Show final story section anyway
-  document.getElementById("choiceSection").style.display = "none";
-  document.getElementById("finalStory").style.display = "block";
+  document.getElementById('choiceResult').textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
+  document.getElementById('choiceResult').style.opacity = 1;
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Final story continuation
 function showFullStory(button) {
-  sendFeedback(button.textContent);
-  document.getElementById("finalStory").style.display = "none";
-  document.getElementById("fullStory").style.display = "block";
+  document.getElementById('fullStory').style.display = 'block';
+  document.getElementById('fullStory').scrollIntoView({ behavior: 'smooth' });
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Continue Story";
+  document.getElementById('feedbackForm').submit();
 }
 
+// Last section
 function showLastSection(button) {
-  sendFeedback(button.textContent);
-  document.getElementById("fullStory").style.display = "none";
-  document.getElementById("lastSection").style.display = "block";
+  document.getElementById('lastSection').style.display = 'block';
+  document.getElementById('lastSection').scrollIntoView({ behavior: 'smooth' });
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Last Thing Clicked";
+  document.getElementById('feedbackForm').submit();
 }
