@@ -54,9 +54,3 @@ function chooseNo() {
     "That’s okay. Some things are powerful enough just to be seen.";
   result.style.opacity = 1;
 }
-
-function showFullStory() {
-  const full = document.getElementById("fullStory");
-  full.style.display = "block";
-  full.scrollIntoView({ behavior: "smooth" });
-}
