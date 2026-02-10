@@ -60,3 +60,9 @@ function showFullStory() {
   full.style.display = "block";
   full.scrollIntoView({ behavior: "smooth" });
 }
+
+function showLastSection() {
+  const last = document.getElementById("lastSection");
+  last.style.display = "block";
+  last.scrollIntoView({ behavior: "smooth" });
+}
