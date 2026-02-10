@@ -22,25 +22,43 @@
     <p id="finalAnswer"></p>
 
     <button id="continueBtn" onclick="continueStory()">
-       Only click if you’re ready for an adventure…
+      Only click if you’re ready for an adventure…
     </button>
   </section>
 
-  <!-- SECTION 2 (HIDDEN AT FIRST) -->
+  <!-- SECTION 2 -->
   <section id="nextSection">
     <h2>
-      feeling brave arent we? i like that.<br><br>
+      feeling brave aren’t we? i like that.<br><br>
       This isn’t something you overthink.<br><br>
       You just smile…<br>
       and keep going.
     </h2>
 
     <div class="answers">
-      <button onclick="finalPick('Keep going')">Keep going🙂</button>
-      <button onclick="finalPick('I’m already smiling')">I’m already smiling😌</button>
+      <button onclick="finalPick()">Keep going🙂</button>
+      <button onclick="finalPick()">I’m already smiling😌</button>
     </div>
 
     <p id="finalMessage"></p>
+  </section>
+
+  <!-- SECTION 3 : IMAGE + TEXT -->
+  <section id="memorySection">
+    <img src="fox-bunny.jpg" alt="Fox and Bunny" />
+
+    <p class="memory-text">
+      Remember this?  
+      This is something you sent me before, when you said you were pushing everyone away.<br><br>
+
+      I don’t think that’s what it is. I think you’re just filtering the people who aren’t worth it.  
+      The ones who lack confidence. The intelligence.  
+      The kind that don’t really know your worth.<br><br>
+
+      The ones who couldn’t keep up with your pace, or the same level of smartness.  
+      People who aren’t honest with themselves, who don’t speak clearly about their true intentions,  
+      and aren’t confident enough to stand by them.
+    </p>
   </section>
 
   <script src="script.js"></script>
