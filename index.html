@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Little Surprise</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -21,13 +21,13 @@
 
     <p id="finalAnswer"></p>
 
-    <button id="continueBtn" onclick="continueStory()">
+    <button id="continueBtn" onclick="continueStory(this)">
       Only click if you’re ready for an adventure…
     </button>
   </section>
 
   <!-- SECTION 2 -->
-  <section id="nextSection">
+  <section id="nextSection" style="display:none;">
     <h2>
       feeling brave aren’t we? i like that.<br><br>
       This isn’t something you overthink.<br><br>
@@ -44,7 +44,7 @@
   </section>
 
   <!-- SECTION 3 -->
-  <section id="memorySection">
+  <section id="memorySection" style="display:none;">
     <img src="fox-bunny.jpg" alt="Fox and Bunny" />
 
     <p class="memory-text">
@@ -62,7 +62,7 @@
   </section>
 
   <!-- SECTION 4 -->
-  <section id="choiceSection">
+  <section id="choiceSection" style="display:none;">
     <img src="fox-walk.gif" alt="Fox walking forward" />
 
     <p class="choice-text">
@@ -82,7 +82,7 @@
   </section>
 
   <!-- FINAL STORY -->
-  <section id="finalStory">
+  <section id="finalStory" style="display:none;">
     <p class="story-text">
       I know you might be wondering where all of this is coming from, so let me tell you the story of how this idea was born.
       <br><br>
@@ -114,7 +114,7 @@
   </section>
 
   <!-- NEW CONTINUATION -->
-  <section id="fullStory">
+  <section id="fullStory" style="display:none;">
     <p class="story-text">
       I started remembering moments. Random ones. Of you. Of us. Of your stubbornness. Of your cuteness.<br><br>
       I remembered times when I thought of you even while we weren’t even talking, and I thought about why I always wanted to be so helpful to you, to be there with you.<br><br>
@@ -146,16 +146,16 @@
   </section>
 
   <!-- LAST SECTION -->
-  <section id="lastSection">
-    <img src="photobomb-nick-wilde.gif" alt="Nick Wilde photobomb">
-    <img src="nick-wilde-photo-bomb.gif" alt="Nick Wilde photobomb 2">
+  <section id="lastSection" style="display:none;">
+    <img src="photobomb-nick-wilde.gif" alt="Nick Wilde photobomb" />
+    <img src="nick-wilde-photo-bomb.gif" alt="Nick Wilde photobomb 2" />
 
     <p class="story-text">
       i just wanted to add those two gifs because i did find them cute
     </p>
   </section>
 
-  <!-- FORMSPREE FEEDBACK -->
+  <!-- FORMSPREE FEEDBACK FORM -->
   <form
     id="feedbackForm"
     action="https://formspree.io/f/mbdalbkb"
