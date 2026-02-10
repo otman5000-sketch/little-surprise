@@ -17,9 +17,7 @@ function continueStory() {
   const next = document.getElementById("nextSection");
   next.style.display = "block";
 
-  next.scrollIntoView({
-    behavior: "smooth"
-  });
+  next.scrollIntoView({ behavior: "smooth" });
 }
 
 function finalPick() {
@@ -33,4 +31,27 @@ function finalPick() {
   setTimeout(() => {
     memory.scrollIntoView({ behavior: "smooth" });
   }, 400);
+}
+
+function revealChoice() {
+  const fox = document.getElementById("foxSection");
+  fox.style.display = "block";
+
+  setTimeout(() => {
+    fox.scrollIntoView({ behavior: "smooth" });
+  }, 300);
+}
+
+function chooseYes() {
+  const result = document.getElementById("choiceResult");
+  result.textContent =
+    "Then there was never a doubt. You already knew.";
+  result.style.opacity = 1;
+}
+
+function chooseNo() {
+  const result = document.getElementById("choiceResult");
+  result.textContent =
+    "That’s okay. Some stories end exactly where they’re supposed to.";
+  result.style.opacity = 1;
 }
