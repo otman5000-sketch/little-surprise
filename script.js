@@ -1,7 +1,6 @@
 function pick(button) {
   const buttons = document.querySelectorAll(".intro-question .answers button");
   buttons.forEach(b => b.classList.remove("selected"));
-
   button.classList.add("selected");
 
   const final = document.getElementById("finalAnswer");
@@ -32,13 +31,22 @@ function finalPick() {
   }, 400);
 }
 
-function revealFox() {
-  const fox = document.getElementById("foxSection");
-  fox.style.display = "block";
-
-  setTimeout(() => {
-    fox.scrollIntoView({ behavior: "smooth" });
-  }, 300);
+function goToChoice() {
+  const choice = document.getElementById("choiceSection");
+  choice.style.display = "block";
+  choice.scrollIntoView({ behavior: "smooth" });
 }
 
 function chooseYes() {
+  const result = document.getElementById("choiceResult");
+  result.textContent =
+    "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+  result.style.opacity = 1;
+}
+
+function chooseNo() {
+  const result = document.getElementById("choiceResult");
+  result.textContent =
+    "That’s okay. Some things are powerful enough just to be seen.";
+  result.style.opacity = 1;
+}
