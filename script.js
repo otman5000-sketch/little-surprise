@@ -22,16 +22,15 @@ function continueStory() {
   });
 }
 
-function finalPick(choice) {
+function finalPick() {
   const msg = document.getElementById("finalMessage");
-
-  if (choice === "Keep going") {
-    msg.textContent =
-      "I promise you’ll be smiling by the end of this";
-  } else {
-    msg.textContent =
-      "I bet you look cute right now.";
-  }
-
+  msg.textContent = "Good choice. This part matters.";
   msg.style.opacity = 1;
+
+  const memory = document.getElementById("memorySection");
+  memory.style.display = "block";
+
+  setTimeout(() => {
+    memory.scrollIntoView({ behavior: "smooth" });
+  }, 400);
 }
