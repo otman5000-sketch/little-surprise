@@ -43,7 +43,7 @@
     <p id="finalMessage"></p>
   </section>
 
-  <!-- SECTION 3 : IMAGE + TEXT -->
+  <!-- SECTION 3 -->
   <section id="memorySection">
     <img src="fox-bunny.jpg" alt="Fox and Bunny" />
 
@@ -59,6 +59,30 @@
       People who aren’t honest with themselves, who don’t speak clearly about their true intentions,  
       and aren’t confident enough to stand by them.
     </p>
+  </section>
+
+  <!-- SECTION 4 : YOUR ENTRANCE -->
+  <section id="choiceSection">
+    <img src="fox-walk.gif" alt="Confident Fox" />
+
+    <p class="choice-text">
+      Hello, hello.<br>
+      So… this is me.<br><br>
+
+      All of that — and a little more.<br>
+      Confident. Clear. Intentional.<br>
+      Not rushing. Not hiding.<br><br>
+
+      The real question is…<br>
+      could you handle it?
+    </p>
+
+    <div class="answers">
+      <button onclick="finalChoice(true)">Oh, you bet I am 😌</button>
+      <button onclick="finalChoice(false)">I think I’ll stop here 🙂</button>
+    </div>
+
+    <p id="choiceResult"></p>
   </section>
 
   <script src="script.js"></script>
