@@ -60,13 +60,25 @@
       and aren’t confident enough to stand by them.
     </p>
 
-    <!-- CONTINUATION (ONLY ADDITION) -->
     <div class="answers">
-      <button onclick="revealNext()">I know someone who can be just that… wanna know?</button>
-      <button onclick="revealNext()">Keep going 🙂</button>
+      <button onclick="revealFox()">I know someone who can be just that… wanna know?</button>
     </div>
+  </section>
 
-    <p id="revealText"></p>
+  <!-- SECTION 4 : GIF + CHOICE -->
+  <section id="foxSection">
+    <img src="fox-walk.gif" alt="Fox walking" />
+
+    <p class="memory-text">
+      hello hello.  
+      i represent myself — who is all of that and more.  
+      would you handle it?
+    </p>
+
+    <div class="answers">
+      <button onclick="chooseYes()">Oh you bet I am</button>
+      <button onclick="chooseNo()">No, I’m gonna stop here</button>
+    </div>
   </section>
 
   <script src="script.js"></script>
