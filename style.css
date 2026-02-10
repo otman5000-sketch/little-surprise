@@ -214,7 +214,9 @@ h1 {
   }
 }
 
-/* Continue Button Design (Modified) */
+/* ===============================
+   Continue Button Design (Modified)
+   =============================== */
 #continueStoryBtn {
   margin-top: 36px;
   padding: 14px 22px;
@@ -229,5 +231,46 @@ h1 {
 }
 
 #continueStoryBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   LAST SECTION (GIFS + FINAL NOTE)
+   =============================== */
+#lastSection {
+  display: none;
+  margin-top: 160px;
+  max-width: 520px;
+  text-align: center;
+  padding-bottom: 160px;
+  animation: fadeIn 1.2s ease;
+}
+
+#lastSection img {
+  width: 100%;
+  max-width: 320px;
+  margin: 16px auto;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* ===============================
+   ONE LAST THING BUTTON
+   (same design as choice button)
+   =============================== */
+#lastThingBtn {
+  margin-top: 36px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #ff7a7a, #ffb199);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 12px 30px rgba(255, 122, 122, 0.4);
+  transition: transform 0.25s ease;
+}
+
+#lastThingBtn:hover {
   transform: translateY(-2px);
 }
