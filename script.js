@@ -51,7 +51,7 @@ function chooseYes() {
 function chooseNo() {
   const result = document.getElementById("choiceResult");
   result.textContent =
-    "That’s okay. Some things are powerful enough just to be seen.";
+    "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
   result.style.opacity = 1;
 }
 
