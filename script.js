@@ -16,10 +16,7 @@ function pick(button) {
 function continueStory() {
   const next = document.getElementById("nextSection");
   next.style.display = "block";
-
-  next.scrollIntoView({
-    behavior: "smooth"
-  });
+  next.scrollIntoView({ behavior: "smooth" });
 }
 
 function finalPick() {
@@ -33,4 +30,18 @@ function finalPick() {
   setTimeout(() => {
     memory.scrollIntoView({ behavior: "smooth" });
   }, 400);
+}
+
+function finalChoice(choice) {
+  const result = document.getElementById("choiceResult");
+
+  if (choice) {
+    result.textContent =
+      "I had a feeling you would say that.\nThere was never really a doubt.";
+  } else {
+    result.textContent =
+      "That’s okay. Knowing what you want is attractive too.";
+  }
+
+  result.style.opacity = 1;
 }
