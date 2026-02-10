@@ -36,14 +36,14 @@
     </h2>
 
     <div class="answers">
-      <button onclick="finalPick()">Keep going🙂</button>
-      <button onclick="finalPick()">I’m already smiling😌</button>
+      <button onclick="finalPick()">Keep going 🙂</button>
+      <button onclick="finalPick()">I’m already smiling 😌</button>
     </div>
 
     <p id="finalMessage"></p>
   </section>
 
-  <!-- SECTION 3 : IMAGE + TEXT -->
+  <!-- SECTION 3 -->
   <section id="memorySection">
     <img src="fox-bunny.jpg" alt="Fox and Bunny" />
 
@@ -52,13 +52,37 @@
       This is something you sent me before, when you said you were pushing everyone away.<br><br>
 
       I don’t think that’s what it is. I think you’re just filtering the people who aren’t worth it.  
-      The ones who lack confidence. The intelligence.  
-      The kind that don’t really know your worth.<br><br>
+      The ones who lack confidence. The intelligence.<br><br>
 
-      The ones who couldn’t keep up with your pace, or the same level of smartness.  
-      People who aren’t honest with themselves, who don’t speak clearly about their true intentions,  
-      and aren’t confident enough to stand by them.
+      The ones who couldn’t keep up with your pace.  
+      The ones who don’t know your worth.
     </p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="choiceSection">
+    <button id="revealChoiceBtn" onclick="revealChoice()">
+      I know someone who can be just that… wanna know?
+    </button>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="foxSection">
+    <img src="fox-walk.gif" alt="Fox walking" />
+
+    <p class="fox-text">
+      hello hello  
+      i represent you my self  
+      who is all of that and more  
+      would u handle it?
+    </p>
+
+    <div class="answers">
+      <button onclick="chooseYes()">Oh you bet I am 😏</button>
+      <button onclick="chooseNo()">No, I’m gonna stop here</button>
+    </div>
+
+    <p id="choiceResult"></p>
   </section>
 
   <script src="script.js"></script>
