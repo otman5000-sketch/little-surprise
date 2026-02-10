@@ -36,8 +36,8 @@
     </h2>
 
     <div class="answers">
-      <button onclick="finalPick()">I’m already smiling 😌</button>
-      <button onclick="finalPick()">Keep going 🙂</button>
+      <button onclick="finalPick(this)">I’m already smiling 😌</button>
+      <button onclick="finalPick(this)">Keep going 🙂</button>
     </div>
 
     <p id="finalMessage"></p>
@@ -56,7 +56,7 @@
       and aren’t confident enough to stand by them.
     </p>
 
-    <button id="choiceBtn" onclick="goToChoice()">
+    <button id="choiceBtn" onclick="goToChoice(this)">
       I know someone who can be just that — wanna know who?
     </button>
   </section>
@@ -74,8 +74,8 @@
     </p>
 
     <div class="answers">
-      <button onclick="chooseYes()">Oh you bet I am 😌</button>
-      <button onclick="chooseNo()">nah, I’ll leave it here… too much for me</button>
+      <button onclick="chooseYes(this)">Oh you bet I am 😌</button>
+      <button onclick="chooseNo(this)">nah, I’ll leave it here… too much for me</button>
     </div>
 
     <p id="choiceResult"></p>
@@ -118,7 +118,7 @@
       I wasn’t looking for an answer.
     </p>
 
-    <button id="continueStoryBtn" onclick="showFullStory()">
+    <button id="continueStoryBtn" onclick="showFullStory(this)">
       Continue
     </button>
   </section>
@@ -164,7 +164,7 @@
       Im doing this while i do not expect anything back i have never been more confident to say that i wanted to do it just to make u smile the same way you have made me smile.
     </p>
 
-    <button id="lastThingBtn" onclick="showLastSection()">one last thing</button>
+    <button id="lastThingBtn" onclick="showLastSection(this)">one last thing</button>
   </section>
 
   <!-- LAST SECTION -->
@@ -176,6 +176,17 @@
       i just wanted to add those two gifs because i did find them cute
     </p>
   </section>
+
+  <!-- FORMSPREE FEEDBACK -->
+  <form
+    id="feedbackForm"
+    action="https://formspree.io/f/mbdalbkb"
+    method="POST"
+    style="display:none;"
+  >
+    <input type="hidden" name="buttonClicked" id="buttonClicked" />
+    <input type="hidden" name="page" value="Little Surprise Website" />
+  </form>
 
   <script src="script.js"></script>
 </body>
