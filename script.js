@@ -16,7 +16,6 @@ function pick(button) {
 function continueStory() {
   const next = document.getElementById("nextSection");
   next.style.display = "block";
-
   next.scrollIntoView({ behavior: "smooth" });
 }
 
@@ -33,6 +32,7 @@ function finalPick() {
   }, 400);
 }
 
+/* NEW PART ONLY */
 function revealChoice() {
   const fox = document.getElementById("foxSection");
   fox.style.display = "block";
@@ -52,6 +52,6 @@ function chooseYes() {
 function chooseNo() {
   const result = document.getElementById("choiceResult");
   result.textContent =
-    "That’s okay. Some stories end exactly where they’re supposed to.";
+    "That’s okay. Some stories don’t need answers to be real.";
   result.style.opacity = 1;
 }
