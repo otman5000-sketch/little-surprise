@@ -116,8 +116,8 @@ h1 {
   display: none;
   margin-top: 160px;
   max-width: 520px;
-  padding-bottom: 140px;
   text-align: center;
+  padding-bottom: 120px;
   animation: fadeIn 1.2s ease;
 }
 
@@ -133,6 +133,60 @@ h1 {
   line-height: 1.6;
   color: #ffd6c9;
   white-space: pre-line;
+}
+
+/* SECTION 4 */
+#choiceSection {
+  margin-top: 120px;
+  text-align: center;
+}
+
+#revealChoiceBtn {
+  padding: 16px 22px;
+  font-size: 16px;
+  border-radius: 16px;
+  background: transparent;
+  border: 1px solid #ffd6c9;
+  color: #ffd6c9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#revealChoiceBtn:hover {
+  background: rgba(255, 214, 201, 0.1);
+  transform: translateY(-2px);
+}
+
+/* SECTION 5 */
+#foxSection {
+  display: none;
+  margin-top: 160px;
+  max-width: 520px;
+  text-align: center;
+  padding-bottom: 160px;
+  animation: fadeIn 1.2s ease;
+}
+
+#foxSection img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.75);
+}
+
+.fox-text {
+  margin-top: 28px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffd6c9;
+  white-space: pre-line;
+}
+
+#choiceResult {
+  margin-top: 30px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: #ffb199;
 }
 
 /* ANIMATION */
