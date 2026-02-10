@@ -27,10 +27,10 @@ function finalPick(choice) {
 
   if (choice === "yes") {
     msg.textContent =
-      "I like that 🙂\nNo pressure.\nJust two people enjoying the moment.";
+      "I promise you’ll be smiling by the end of this";
   } else {
     msg.textContent =
-      "That’s totally okay 😌\nGood things don’t need to be rushed.";
+      "I bet you look cute right now.";
   }
 
   msg.style.opacity = 1;
