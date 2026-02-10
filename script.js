@@ -3,9 +3,9 @@ function pick(button) {
   buttons.forEach(b => b.classList.remove("selected"));
   button.classList.add("selected");
 
-  document.getElementById("finalAnswer").textContent =
-    "Honestly? All of the above 🙂";
-  document.getElementById("finalAnswer").style.opacity = 1;
+  const finalAnswer = document.getElementById("finalAnswer");
+  finalAnswer.textContent = "Honestly? All of the above 🙂";
+  finalAnswer.style.opacity = 1;
 
   const continueBtn = document.getElementById("continueBtn");
   continueBtn.style.opacity = 1;
@@ -19,9 +19,9 @@ function continueStory() {
 }
 
 function finalPick() {
-  document.getElementById("finalMessage").textContent =
-    "Good choice. This part matters.";
-  document.getElementById("finalMessage").style.opacity = 1;
+  const msg = document.getElementById("finalMessage");
+  msg.textContent = "Good choice. This part matters.";
+  msg.style.opacity = 1;
 
   const memory = document.getElementById("memorySection");
   memory.style.display = "block";
@@ -37,12 +37,15 @@ function goToChoice() {
 function chooseYes() {
   const result = document.getElementById("choiceResult");
   result.textContent =
-    "Yeah… I knew it 🙂";
+    "Yeah… I knew it. There was never really a doubt, was there? 🙂";
   result.style.opacity = 1;
 
   const story = document.getElementById("finalStory");
   story.style.display = "block";
-  story.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    story.scrollIntoView({ behavior: "smooth" });
+  }, 600);
 }
 
 function chooseNo() {
@@ -52,8 +55,8 @@ function chooseNo() {
   result.style.opacity = 1;
 }
 
-function showContinueMemory() {
-  const section = document.getElementById("continueMemory");
-  section.style.display = "block";
-  section.scrollIntoView({ behavior: "smooth" });
+function showFullStory() {
+  const full = document.getElementById("fullStory");
+  full.style.display = "block";
+  full.scrollIntoView({ behavior: "smooth" });
 }
