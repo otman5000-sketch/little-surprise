@@ -68,4 +68,130 @@ h1 {
   margin-top: 26px;
   font-size: 18px;
   opacity: 0;
-  transition: opac
+  transition: opacity 0.4s ease;
+  color: #ffbfbf;
+}
+
+#continueBtn {
+  margin-top: 28px;
+  padding: 14px 20px;
+  background: transparent;
+  border: 1px dashed #ffb199;
+  color: #ffb199;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#continueBtn:hover {
+  background: rgba(255, 177, 153, 0.1);
+}
+
+/* SECTION 2 */
+#nextSection {
+  display: none;
+  margin-top: 140px;
+  text-align: center;
+}
+
+#nextSection h2 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#finalMessage {
+  margin-top: 30px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: #ffd6c9;
+}
+
+/* SECTION 3 */
+#memorySection {
+  display: none;
+  margin-top: 160px;
+  max-width: 520px;
+  padding-bottom: 60px;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+#memorySection img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.memory-text {
+  margin-top: 28px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #ffd6c9;
+}
+
+#choiceBtn {
+  margin-top: 36px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #ff7a7a, #ffb199);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 12px 30px rgba(255, 122, 122, 0.4);
+  transition: transform 0.25s ease;
+}
+
+#choiceBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* SECTION 4 */
+#choiceSection {
+  display: none;
+  margin-top: 160px;
+  max-width: 520px;
+  text-align: center;
+  padding-bottom: 160px;
+  animation: fadeIn 1.2s ease;
+}
+
+#choiceSection img {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.choice-text {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffd6c9;
+}
+
+#choiceResult {
+  margin-top: 28px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: #ffbfbf;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
