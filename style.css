@@ -72,23 +72,24 @@ h1 {
   color: #ffbfbf;
 }
 
-/* CONTINUE BUTTON */
+/* 🔥 CONTINUE BUTTON — MATCHES choiceBtn EXACTLY */
 #continueBtn {
-  margin-top: 28px;
-  padding: 14px 20px;
-  background: transparent;
-  border: 1px dashed #ffb199;
-  color: #ffb199;
-  border-radius: 14px;
+  margin-top: 36px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #ff7a7a, #ffb199);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 16px;
   cursor: pointer;
   font-size: 15px;
+  box-shadow: 0 12px 30px rgba(255, 122, 122, 0.4);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.3s ease;
 }
 
 #continueBtn:hover {
-  background: rgba(255, 177, 153, 0.1);
+  transform: translateY(-2px);
 }
 
 /* SECTION 2 */
@@ -152,57 +153,7 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* SECTION 4 */
-#choiceSection {
-  display: none;
-  margin-top: 160px;
-  max-width: 520px;
-  text-align: center;
-  padding-bottom: 80px;
-  animation: fadeIn 1.2s ease;
-}
-
-#choiceSection img {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
-}
-
-.choice-text {
-  margin-top: 30px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #ffd6c9;
-}
-
-#choiceResult {
-  margin-top: 28px;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  color: #ffbfbf;
-}
-
-/* FINAL STORY */
-#finalStory,
-#fullStory {
-  display: none;
-  margin-top: 160px;
-  max-width: 520px;
-  text-align: center;
-  padding-bottom: 160px;
-  animation: fadeIn 1.2s ease;
-}
-
-.story-text {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #ffd6c9;
-}
-
-/* ANIMATION */
+/* FINAL */
 @keyframes fadeIn {
   from {
     opacity: 0;
