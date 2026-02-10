@@ -1,93 +1,43 @@
-* {
-  box-sizing: border-box;
+function pick(button) {
+  const buttons = document.querySelectorAll(".intro-question .answers button");
+  buttons.forEach(b => b.classList.remove("selected"));
+
+  button.classList.add("selected");
+
+  const final = document.getElementById("finalAnswer");
+  final.textContent = "Honestly? All of the above 🙂";
+  final.style.opacity = 1;
+
+  const continueBtn = document.getElementById("continueBtn");
+  continueBtn.style.opacity = 1;
+  continueBtn.style.pointerEvents = "auto";
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: radial-gradient(circle at top left, #1f2a2e, #0b0b0b);
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+function continueStory() {
+  const next = document.getElementById("nextSection");
+  next.style.display = "block";
+
+  next.scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
-/* SECTION 1 */
-.intro-question {
-  margin-top: 120px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  padding: 42px 32px;
-  border-radius: 22px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  animation: fadeIn 1s ease;
+function finalPick() {
+  const msg = document.getElementById("finalMessage");
+  msg.textContent = "Good choice. This part matters.";
+  msg.style.opacity = 1;
+
+  const memory = document.getElementById("memorySection");
+  memory.style.display = "block";
+
+  setTimeout(() => {
+    memory.scrollIntoView({ behavior: "smooth" });
+  }, 400);
 }
 
-h1 {
-  font-size: 26px;
-  font-weight: 600;
+function revealNext() {
+  const reveal = document.getElementById("revealText");
+  reveal.textContent =
+    "Someone who sees you clearly. Someone who isn’t intimidated by your depth — but drawn to it.";
+  reveal.style.opacity = 1;
 }
-
-.answers {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.answers button {
-  width: 100%;
-  padding: 15px 18px;
-  background: linear-gradient(180deg, #1e1e1e, #141414);
-  color: white;
-  border: 1px solid #2f2f2f;
-  border-radius: 14px;
-  cursor: pointer;
-  font-size: 15px;
-  text-align: left;
-  transition: all 0.25s ease;
-}
-
-.answers button.selected {
-  background: linear-gradient(135deg, #ff7a7a, #ffb199);
-  color: #1a1a1a;
-}
-
-#finalAnswer {
-  margin-top: 26px;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-#continueBtn {
-  margin-top: 28px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* SECTION 2 */
-#nextSection {
-  display: none;
-  margin-top: 140px;
-  text-align: center;
-}
-
-/* SECTION 3 */
-#memorySection {
-  display: none;
-  margin-top: 160px;
-  max-width: 520px;
-  text-align: center;
-}
-
-#memorySection img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-/* SECTION 4 (NEW*
