@@ -207,3 +207,28 @@ h1 {
     transform: translateY(16px);
   }
   to {
+#finalContinueBtn {
+  margin-top: 36px;
+  padding: 14px 22px;
+  background: transparent;
+  border: 1px dashed #ffb199;
+  color: #ffb199;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+#finalContinueBtn:hover {
+  background: rgba(255, 177, 153, 0.1);
+  transform: translateY(-2px);
+}
+
+#lastStory {
+  display: none;
+  margin-top: 140px;
+  max-width: 520px;
+  text-align: center;
+  padding-bottom: 200px;
+  animation: fadeIn 1.2s ease;
+}
