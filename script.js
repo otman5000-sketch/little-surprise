@@ -7,11 +7,7 @@ function pick(button) {
   finalAnswer.textContent = "You clicked: " + answerText;
   finalAnswer.style.opacity = 1;
 
-  // Set hidden form input and submit
-  document.getElementById('buttonClicked').value = answerText;
-  document.getElementById('feedbackForm').submit();
-
-  console.log("Feedback sent: " + answerText);
+  console.log("Picked: " + answerText);
 }
 
 // Continue to next section
@@ -30,9 +26,7 @@ function finalPick(button) {
   document.getElementById('memorySection').style.display = 'block';
   document.getElementById('memorySection').scrollIntoView({ behavior: 'smooth' });
 
-  // Send feedback for this button
-  document.getElementById('buttonClicked').value = button.textContent;
-  document.getElementById('feedbackForm').submit();
+  console.log("Final pick: " + button.textContent);
 }
 
 // Go to choice section
@@ -40,9 +34,7 @@ function goToChoice(button) {
   document.getElementById('choiceSection').style.display = 'block';
   document.getElementById('choiceSection').scrollIntoView({ behavior: 'smooth' });
 
-  // Send feedback
-  document.getElementById('buttonClicked').value = button.textContent;
-  document.getElementById('feedbackForm').submit();
+  console.log("Go to choice clicked: " + button.textContent);
 }
 
 // Choice yes/no buttons
@@ -51,20 +43,18 @@ function chooseYes(button) {
   document.getElementById('choiceResult').style.opacity = 1;
 
   document.getElementById('finalStory').style.display = 'block';
-  setTimeout(() => { document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' }); }, 600);
+  setTimeout(() => {
+    document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' });
+  }, 600);
 
-  // Send feedback
-  document.getElementById('buttonClicked').value = button.textContent;
-  document.getElementById('feedbackForm').submit();
+  console.log("Chose Yes: " + button.textContent);
 }
 
 function chooseNo(button) {
   document.getElementById('choiceResult').textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
   document.getElementById('choiceResult').style.opacity = 1;
 
-  // Send feedback
-  document.getElementById('buttonClicked').value = button.textContent;
-  document.getElementById('feedbackForm').submit();
+  console.log("Chose No: " + button.textContent);
 }
 
 // Final story continuation
@@ -72,9 +62,7 @@ function showFullStory(button) {
   document.getElementById('fullStory').style.display = 'block';
   document.getElementById('fullStory').scrollIntoView({ behavior: 'smooth' });
 
-  // Send feedback
-  document.getElementById('buttonClicked').value = "Continue Story";
-  document.getElementById('feedbackForm').submit();
+  console.log("Continue story clicked");
 }
 
 // Last section
@@ -82,7 +70,5 @@ function showLastSection(button) {
   document.getElementById('lastSection').style.display = 'block';
   document.getElementById('lastSection').scrollIntoView({ behavior: 'smooth' });
 
-  // Send feedback
-  document.getElementById('buttonClicked').value = "Last Thing Clicked";
-  document.getElementById('feedbackForm').submit();
+  console.log("Last thing clicked");
 }
