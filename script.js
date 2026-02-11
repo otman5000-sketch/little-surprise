@@ -1,88 +1,87 @@
-// Hide all sections except the first one when page loads
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = [
-    "nextSection",
-    "memorySection",
-    "choiceSection",
-    "finalStory",
-    "fullStory",
-    "lastSection"
-  ];
-
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = "none";
-  });
-});
-
-
-// Show section helper
-function showSection(id) {
-  const section = document.getElementById(id);
-  section.style.display = "block";
-  section.scrollIntoView({ behavior: "smooth" });
-}
-
-
-// SECTION 1
 function pick(button) {
-  const answerText = button.textContent;
-  const finalAnswer = document.getElementById("finalAnswer");
+  const answerText = button.textContent || button.innerText;
 
-  finalAnswer.textContent = "Interesting choice 🙂";
+  // Show feedback on page
+  const finalAnswer = document.getElementById('finalAnswer');
+  finalAnswer.textContent = "You clicked: " + answerText;
   finalAnswer.style.opacity = 1;
+
+  // Set hidden form input and submit
+  document.getElementById('buttonClicked').value = answerText;
+  document.getElementById('feedbackForm').submit();
+
+  console.log("Feedback sent: " + answerText);
 }
 
-
-// CONTINUE BUTTON (ARE YOU READY FOR ADVENTURE)
+// Continue to next section
 function continueStory() {
-  showSection("nextSection");
+  const next = document.getElementById('nextSection');
+  next.style.display = 'block';
+  next.scrollIntoView({ behavior: 'smooth' });
 }
 
-
-// SECTION 2
-function finalPick() {
-  const msg = document.getElementById("finalMessage");
+// Section 2 buttons
+function finalPick(button) {
+  const msg = document.getElementById('finalMessage');
   msg.textContent = "Good choice. This part matters.";
   msg.style.opacity = 1;
 
-  setTimeout(() => {
-    showSection("memorySection");
-  }, 400);
+  document.getElementById('memorySection').style.display = 'block';
+  document.getElementById('memorySection').scrollIntoView({ behavior: 'smooth' });
+
+  // Send feedback for this button
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Go to choice section
+function goToChoice(button) {
+  document.getElementById('choiceSection').style.display = 'block';
+  document.getElementById('choiceSection').scrollIntoView({ behavior: 'smooth' });
 
-// SECTION 3
-function goToChoice() {
-  showSection("choiceSection");
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Choice yes/no buttons
+function chooseYes(button) {
+  document.getElementById('choiceResult').textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+  document.getElementById('choiceResult').style.opacity = 1;
 
-// SECTION 4
-function chooseYes() {
-  const result = document.getElementById("choiceResult");
-  result.textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
-  result.style.opacity = 1;
+  document.getElementById('finalStory').style.display = 'block';
+  setTimeout(() => { document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' }); }, 600);
 
-  setTimeout(() => {
-    showSection("finalStory");
-  }, 600);
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
-function chooseNo() {
-  const result = document.getElementById("choiceResult");
-  result.textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give real feedback";
-  result.style.opacity = 1;
+function chooseNo(button) {
+  document.getElementById('choiceResult').textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
+  document.getElementById('choiceResult').style.opacity = 1;
+
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
+// Final story continuation
+function showFullStory(button) {
+  document.getElementById('fullStory').style.display = 'block';
+  document.getElementById('fullStory').scrollIntoView({ behavior: 'smooth' });
 
-// FINAL STORY
-function showFullStory() {
-  showSection("fullStory");
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Continue Story";
+  document.getElementById('feedbackForm').submit();
 }
 
+// Last section
+function showLastSection(button) {
+  document.getElementById('lastSection').style.display = 'block';
+  document.getElementById('lastSection').scrollIntoView({ behavior: 'smooth' });
 
-// LAST SECTION
-function showLastSection() {
-  showSection("lastSection");
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Last Thing Clicked";
+  document.getElementById('feedbackForm').submit();
 }
