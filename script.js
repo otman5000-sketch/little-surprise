@@ -1,102 +1,88 @@
-// ===============================
-// SECTION 1
-// ===============================
-
-// Function called by answer buttons
+// Function called by all buttons to pick an answer
 function pick(button) {
   const answerText = button.textContent || button.innerText;
 
+  // Show feedback on page
   const finalAnswer = document.getElementById('finalAnswer');
   finalAnswer.textContent = "You clicked: " + answerText;
   finalAnswer.style.opacity = 1;
 
-  console.log("Button clicked:", answerText);
+  // Set hidden form input and submit
+  document.getElementById('buttonClicked').value = answerText;
+  document.getElementById('feedbackForm').submit();
+
+  console.log("Feedback sent: " + answerText);
 }
 
-// Continue to Section 2
+// Continue to next section
 function continueStory() {
   const next = document.getElementById('nextSection');
   next.style.display = 'block';
   next.scrollIntoView({ behavior: 'smooth' });
 }
 
-
-// ===============================
-// SECTION 2
-// ===============================
-
+// Section 2 buttons
 function finalPick(button) {
   const msg = document.getElementById('finalMessage');
   msg.textContent = "Good choice. This part matters.";
   msg.style.opacity = 1;
 
-  const memory = document.getElementById('memorySection');
-  memory.style.display = 'block';
-  memory.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('memorySection').style.display = 'block';
+  document.getElementById('memorySection').scrollIntoView({ behavior: 'smooth' });
 
-  console.log("Button clicked:", button.textContent);
+  // Send feedback for this button
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
-
-// ===============================
-// SECTION 3
-// ===============================
-
+// Go to choice section
 function goToChoice(button) {
-  const choiceSection = document.getElementById('choiceSection');
-  choiceSection.style.display = 'block';
-  choiceSection.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('choiceSection').style.display = 'block';
+  document.getElementById('choiceSection').scrollIntoView({ behavior: 'smooth' });
 
-  console.log("Button clicked:", button.textContent);
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
-
-// ===============================
-// SECTION 4 (YES / NO)
-// ===============================
-
+// Choice yes/no buttons
 function chooseYes(button) {
-  const result = document.getElementById('choiceResult');
-  result.textContent =
-    "Yeah… I knew it. There was never really a doubt, was there? 🙂";
-  result.style.opacity = 1;
+  document.getElementById('choiceResult').textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+  document.getElementById('choiceResult').style.opacity = 1;
 
-  const finalStory = document.getElementById('finalStory');
-  finalStory.style.display = 'block';
+  document.getElementById('finalStory').style.display = 'block';
+  setTimeout(() => { document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' }); }, 600);
 
-  setTimeout(() => {
-    finalStory.scrollIntoView({ behavior: 'smooth' });
-  }, 600);
-
-  console.log("Button clicked:", button.textContent);
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
 function chooseNo(button) {
-  const result = document.getElementById('choiceResult');
-  result.textContent =
-    "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
-  result.style.opacity = 1;
+  document.getElementById('choiceResult').textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
+  document.getElementById('choiceResult').style.opacity = 1;
 
-  console.log("Button clicked:", button.textContent);
+  // Send feedback
+  document.getElementById('buttonClicked').value = button.textContent;
+  document.getElementById('feedbackForm').submit();
 }
 
-
-// ===============================
-// FINAL STORY
-// ===============================
-
+// Final story continuation
 function showFullStory(button) {
-  const fullStory = document.getElementById('fullStory');
-  fullStory.style.display = 'block';
-  fullStory.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('fullStory').style.display = 'block';
+  document.getElementById('fullStory').scrollIntoView({ behavior: 'smooth' });
 
-  console.log("Continue Story clicked");
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Continue Story";
+  document.getElementById('feedbackForm').submit();
 }
 
+// Last section
 function showLastSection(button) {
-  const lastSection = document.getElementById('lastSection');
-  lastSection.style.display = 'block';
-  lastSection.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('lastSection').style.display = 'block';
+  document.getElementById('lastSection').scrollIntoView({ behavior: 'smooth' });
 
-  console.log("Last Thing clicked");
+  // Send feedback
+  document.getElementById('buttonClicked').value = "Last Thing Clicked";
+  document.getElementById('feedbackForm').submit();
 }
