@@ -1,86 +1,77 @@
-// Pick an answer from Section 1
+// SECTION 1: Pick an answer
 function pick(button) {
-  const answerText = button.textContent || button.innerText;
+  const buttons = document.querySelectorAll(".intro-question .answers button");
+  buttons.forEach(b => b.classList.remove("selected")); // remove previous selection
 
-  // Show feedback
-  const finalAnswer = document.getElementById('finalAnswer');
-  finalAnswer.textContent = "You clicked: " + answerText;
-  finalAnswer.style.opacity = 1;
+  button.classList.add("selected"); // highlight clicked button
 
-  // Make the continue button visible
-  const continueBtn = document.getElementById('continueBtn');
+  const final = document.getElementById("finalAnswer");
+  final.textContent = "Honestly? All of the above 🙂";
+  final.style.opacity = 1;
+
+  const continueBtn = document.getElementById("continueBtn");
   continueBtn.style.opacity = 1;
-  continueBtn.style.pointerEvents = 'auto';
-
-  console.log("Picked:", answerText);
+  continueBtn.style.pointerEvents = "auto";
 }
 
-// Continue to Section 2
+// SECTION 1 -> 2: Continue
 function continueStory() {
-  const nextSection = document.getElementById('nextSection');
-  nextSection.style.display = 'block';
-  nextSection.scrollIntoView({ behavior: 'smooth' });
+  const next = document.getElementById("nextSection");
+  next.style.display = "block";
+  next.scrollIntoView({ behavior: "smooth" });
 }
 
-// Section 2 buttons
+// SECTION 2: Yes/No options
 function finalPick(button) {
-  const msg = document.getElementById('finalMessage');
-  msg.textContent = "Good choice. This part matters.";
+  const msg = document.getElementById("finalMessage");
+
+  if (button.textContent.includes("smiling") || button.textContent.includes("Keep going")) {
+    msg.textContent = "I like that 🙂\nNo pressure.\nJust two people enjoying the moment.";
+  } else {
+    msg.textContent = "That’s totally okay 😌\nGood things don’t need to be rushed.";
+  }
+
   msg.style.opacity = 1;
 
-  const memorySection = document.getElementById('memorySection');
-  memorySection.style.display = 'block';
-  memorySection.scrollIntoView({ behavior: 'smooth' });
-
-  console.log("Final pick:", button.textContent);
+  const memorySection = document.getElementById("memorySection");
+  memorySection.style.display = "block";
+  memorySection.scrollIntoView({ behavior: "smooth" });
 }
 
-// Go to choice section
+// SECTION 3: Choice Section
 function goToChoice(button) {
-  const choiceSection = document.getElementById('choiceSection');
-  choiceSection.style.display = 'block';
-  choiceSection.scrollIntoView({ behavior: 'smooth' });
-
-  console.log("Go to choice clicked:", button.textContent);
+  const choiceSection = document.getElementById("choiceSection");
+  choiceSection.style.display = "block";
+  choiceSection.scrollIntoView({ behavior: "smooth" });
 }
 
-// Choice yes/no buttons
+// SECTION 4: Yes/No choice
 function chooseYes(button) {
-  const choiceResult = document.getElementById('choiceResult');
+  const choiceResult = document.getElementById("choiceResult");
   choiceResult.textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
   choiceResult.style.opacity = 1;
 
-  const finalStory = document.getElementById('finalStory');
-  finalStory.style.display = 'block';
-  setTimeout(() => {
-    finalStory.scrollIntoView({ behavior: 'smooth' });
-  }, 600);
-
-  console.log("Chose Yes:", button.textContent);
+  const finalStory = document.getElementById("finalStory");
+  finalStory.style.display = "block";
+  setTimeout(() => finalStory.scrollIntoView({ behavior: "smooth" }), 600);
 }
 
 function chooseNo(button) {
-  const choiceResult = document.getElementById('choiceResult');
+  const choiceResult = document.getElementById("choiceResult");
   choiceResult.textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
   choiceResult.style.opacity = 1;
-
-  console.log("Chose No:", button.textContent);
 }
 
-// Continue final story
+// FINAL STORY CONTINUATION
 function showFullStory(button) {
-  const fullStory = document.getElementById('fullStory');
-  fullStory.style.display = 'block';
-  fullStory.scrollIntoView({ behavior: 'smooth' });
-
-  console.log("Continue story clicked");
+  const fullStory = document.getElementById("fullStory");
+  fullStory.style.display = "block";
+  fullStory.scrollIntoView({ behavior: "smooth" });
 }
 
-// Show last section
+// LAST SECTION
 function showLastSection(button) {
-  const lastSection = document.getElementById('lastSection');
-  lastSection.style.display = 'block';
-  lastSection.scrollIntoView({ behavior: 'smooth' });
-
-  console.log("Last thing clicked");
+  const lastSection = document.getElementById("lastSection");
+  lastSection.style.display = "block";
+  lastSection.scrollIntoView({ behavior: "smooth" });
 }
