@@ -7,121 +7,144 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ <!-- SECTION 1 -->
+ <section class="intro-question">
+   <h1>What do you think this is?</h1>
+   <div class="answers">
+     <button onclick="pick(this)">A subtle flex that I can build a website… and I learned how in just 1 day. 😌</button>
+     <button onclick="pick(this)">Something I made because I’m a little crazy 🙃</button>
+     <button onclick="pick(this)">A small thing I wanted to make just for you 🙂</button>
+     <button onclick="pick(this)">A cry for help — I’ve clearly overthought this 🫠</button>
+   </div>
+   <p id="finalAnswer"></p>
+   <button id="continueBtn" onclick="continueStory()">Only click if you’re ready for an adventure…</button>
+ </section>
 
-  <!-- SECTION 1 -->
-  <section class="intro-question">
-    <h1>What do you think this is?</h1>
-    <div class="answers">
-      <button onclick="pick(this)">A subtle flex that I can build a website… and I learned how in just 1 day. 😌</button>
-      <button onclick="pick(this)">Something I made because I’m a little crazy 🙃</button>
-      <button onclick="pick(this)">A small thing I wanted to make just for you 🙂</button>
-      <button onclick="pick(this)">A cry for help — I’ve clearly overthought this 🫠</button>
-    </div>
-    <p id="finalAnswer"></p>
-    <button id="continueBtn" onclick="continueStory()">Only click if you’re ready for an adventure…</button>
-  </section>
+ <!-- SECTION 2 -->
+ <section id="nextSection">
+   <h2>
+     feeling brave aren’t we? i like that.<br><br>
+     This isn’t something you overthink.<br><br>
+     You just smile…<br>
+     and keep going.
+   </h2>
+   <div class="answers">
+     <button onclick="finalPick(this)">I’m already smiling 😌</button>
+     <button onclick="finalPick(this)">Keep going 🙂</button>
+   </div>
+   <p id="finalMessage"></p>
+ </section>
 
-  <!-- SECTION 2 -->
-  <section id="nextSection">
-    <h2>
-      feeling brave aren’t we? i like that.<br><br>
-      This isn’t something you overthink.<br><br>
-      You just smile…<br>
-      and keep going.
-    </h2>
-    <div class="answers">
-      <button onclick="finalPick(this)">I’m already smiling 😌</button>
-      <button onclick="finalPick(this)">Keep going 🙂</button>
-    </div>
-    <p id="finalMessage"></p>
-  </section>
+ <!-- SECTION 3 -->
+ <section id="memorySection">
+   <img src="fox-bunny.jpg" alt="Fox and Bunny" />
+   <p class="memory-text">
+     Remember this? This is something you sent me before, when you said you were pushing everyone away.<br><br>
+     I don’t think that’s what it is. I think you’re just filtering the people who aren’t worth it.
+     The ones who lack confidence. The intelligence. The kind that don’t really know your worth.<br><br>
+     The ones who couldn’t keep up with your pace, or the same level of smartness.
+     People who aren’t honest with themselves, who don’t speak clearly about their true intentions,
+     and aren’t confident enough to stand by them.
+   </p>
+   <button id="choiceBtn" onclick="goToChoice(this)">I know someone who can be just that — wanna know who?</button>
+ </section>
 
-  <!-- SECTION 3 -->
-  <section id="memorySection">
-    <img src="fox-bunny.jpg" alt="Fox and Bunny" />
-    <p class="memory-text">
-      Remember this? This is something you sent me before, when you said you were pushing everyone away.<br><br>
-      I don’t think that’s what it is. I think you’re just filtering the people who aren’t worth it.
-      The ones who lack confidence. The intelligence. The kind that don’t really know your worth.<br><br>
-      The ones who couldn’t keep up with your pace, or the same level of smartness.
-      People who aren’t honest with themselves, who don’t speak clearly about their true intentions,
-      and aren’t confident enough to stand by them.
-    </p>
-    <button id="choiceBtn" onclick="goToChoice(this)">I know someone who can be just that — wanna know who?</button>
-  </section>
+ <!-- SECTION 4 -->
+ <section id="choiceSection">
+   <img src="fox-walk.gif" alt="Fox walking forward" />
+   <p class="choice-text">
+     hello hello 🙂<br><br>
+     i represent you<br>
+     myself<br><br>
+     all of that and more<br>
+     would you handle it?
+   </p>
+   <div class="answers">
+     <button onclick="chooseYes(this)">Oh you bet I am 😌</button>
+     <button onclick="chooseNo(this)">nah, I’ll leave it here… too much for me</button>
+   </div>
+   <p id="choiceResult"></p>
+ </section>
 
-  <!-- SECTION 4 -->
-  <section id="choiceSection">
-    <img src="fox-walk.gif" alt="Fox walking forward" />
-    <p class="choice-text">
-      hello hello 🙂<br><br>
-      i represent you<br>
-      myself<br><br>
-      all of that and more<br>
-      would you handle it?
-    </p>
-    <div class="answers">
-      <button onclick="chooseYes(this)">Oh you bet I am 😌</button>
-      <button onclick="chooseNo(this)">nah, I’ll leave it here… too much for me</button>
-    </div>
-    <p id="choiceResult"></p>
-  </section>
+ <!-- FINAL STORY -->
+ <section id="finalStory">
+   <p class="story-text">
+     I know you might be wondering where all of this is coming from, so let me tell you the story of how this idea was born.
+     <br><br>
+     I did visit the beach the next day, after our talk as you my psy recommended. I walked along the shore and even did some running, but my mind kept overthinking, as it tends to. At some point, I decided to just sit down.
+     <br><br>
+     And then an idea hit me. A crazy one, of course. You know me already.
+     <br><br>
+     Honestly, I wanted to swim, to dive as deep as I could. But I didn’t. It wasn’t because the water was cold. It was more about not having a place to leave my clothes. Trust me, I would have.
+     <br><br>
+     But in that moment, I thought of you. I smiled.
+     <br><br>
+     I remembered you telling me to go to the beach with someone you care about and trust. Not to talk, just to be there together.
+     <br><br>
+     I couldn’t help imagining you beside me your hands in mine. I remembered every time you showed me your cute nails, and suddenly all I wanted was to hold them.
+     <br><br>
+     I never really thought of the beach as something special before. But because of you, it was.
+     <br><br>
+     And then I remembered a question you asked me:
+     <br>“Why are you doing all of this? We’re not in a relationship.”<br><br>
+     For the first time, I just sat there and I didn’t overthink it. The question itself was enough. Just being there, floating with the moment.
+     <br><br>
+     I wasn’t looking for an answer.
+   </p>
+   <button id="continueStoryBtn" onclick="showFullStory(this)">Continue</button>
+ </section>
 
-  <!-- FINAL STORY -->
-  <section id="finalStory">
+ <!-- NEW CONTINUATION -->
+<section id="fullStory">
     <p class="story-text">
-      I know you might be wondering where all of this is coming from, so let me tell you the story of how this idea was born.
-      <br><br>
-      I did visit the beach the next day, after our talk as you my psy recommended. I walked along the shore and even did some running, but my mind kept overthinking, as it tends to. At some point, I decided to just sit down.
-      <br><br>
-      And then an idea hit me. A crazy one, of course. You know me already.
-      <br><br>
-      Honestly, I wanted to swim, to dive as deep as I could. But I didn’t. It wasn’t because the water was cold. It was more about not having a place to leave my clothes. Trust me, I would have.
-      <br><br>
-      But in that moment, I thought of you. I smiled.
-      <br><br>
-      I remembered you telling me to go to the beach with someone you care about and trust. Not to talk, just to be there together.
-      <br><br>
-      I couldn’t help imagining you beside me your hands in mine. I remembered every time you showed me your cute nails, and suddenly all I wanted was to hold them.
-      <br><br>
-      I never really thought of the beach as something special before. But because of you, it was.
-      <br><br>
-      And then I remembered a question you asked me:
-      <br>“Why are you doing all of this? We’re not in a relationship.”<br><br>
-      For the first time, I just sat there and I didn’t overthink it. The question itself was enough. Just being there, floating with the moment.
-      <br><br>
-      I wasn’t looking for an answer.
-    </p>
-    <button id="continueStoryBtn" onclick="showFullStory(this)">Continue</button>
-  </section>
 
-  <!-- NEW CONTINUATION -->
-  <section id="fullStory">
-    <p class="story-text">
       I started remembering moments. Random ones. Of you. Of us. Of your stubbornness. Of your cuteness.<br><br>
-      [Story continues...]
+
+      I remembered times when I thought of you even while we weren’t even talking, and I thought about why I always wanted to be so helpful to you, to be there with you.<br><br>
+
+      I thought of my favorite reel that you once sent me, one that I don’t think you even remember, but for me it meant the world: “HUG ME UNTIL I SMELL LIKE YOU.”
+      That line has made me smile more times than I can count.<br><br>
+
+      I remembered the day I made you sick because we talked until a late hour.
+      I remembered the day I was incredibly grateful to your grandma, because thanks to her being there we could talk on a call. She couldn’t have made me any happier.
+      I remembered us talking about our childhood memories.<br><br>
+
+      I also remembered the day you were talking about building a website for your prof, and I remember saying, if you want, I can help. If you’re busy with other presentations, I’m down to help.
+      At the time, I didn’t even know if it was feasible to create a website. I had never done it before. But I wanted to learn it just for you.<br><br>
+
+      And then I smiled and said to myself: you know, Outman, I probably wouldn’t have been that excited to do it for my own presentation — lazy me. I would have found the easiest way out for the prof. But for her, I made sure it would be the best I could do, learning something new just for her, something I normally wouldn’t care about.<br><br>
+
+      And then my one and only question was answered:<br>
+      Why?<br>
+      Because I want to.<br><br>
+
+      I expected nothing back. It was a genuine feeling, one I had never experienced before. One that made me just sit there, listening to music and chilling. I felt comfortable, relaxed, free.<br><br>
+
+      I remembered a line you once said: “This is life, it has highs and lows.”
+      And somehow I wanted to say that I care more about your lows. I want to be there for you in your lows, and I want you to be with me in my highs. Why? Because that’s what I want.<br><br>
+
+      So I decided to build this website. First, to know for sure if I was bluffing when I said I would build it for you — haha, I wasn’t. I’m impressed I could do it within a day.
+      And second, to do something special simply because I felt like it.<br><br>
+
+      I wasn’t expecting to write a text like this. I had been planning a quiz and some challenges — something light, not too expressive, themed around the fox and bunny. But it ended up like this, because this is the truest way I can honestly express my feelings, without hiding behind a game. It felt real.<br><br>
+
+      Usually, Valentine gifts end with a question: “Will you be my Valentine?”
+      I had planned to say, “Will you be my mogayo to this bogayo?”
+      But I don’t want to do that anymore, because I’m sure you have questions, and I’ll let you answer them the same way I did — by yourself.<br><br>
+
+      I’m doing this while expecting nothing back. I have never been more confident saying that I wanted to do this just to make you smile, the same way you have made me smile.
+
     </p>
+
     <button id="lastThingBtn" onclick="showLastSection(this)">one last thing</button>
   </section>
+ <!-- LAST SECTION -->
+ <section id="lastSection">
+   <img src="photobomb-nick-wilde.gif" alt="Nick Wilde photobomb">
+   <img src="nick-wilde-photo-bomb.gif" alt="Nick Wilde photobomb 2">
+   <p class="story-text">i just wanted to add those two gifs because i did find them cute</p>
+ </section>
 
-  <!-- LAST SECTION -->
-  <section id="lastSection">
-    <img src="photobomb-nick-wilde.gif" alt="Nick Wilde photobomb">
-    <img src="nick-wilde-photo-bomb.gif" alt="Nick Wilde photobomb 2">
-    <p class="story-text">i just wanted to add those two gifs because i did find them cute</p>
-  </section>
-
-  <!-- HIDDEN FORM FOR FEEDBACK -->
-  <form
-    id="feedbackForm"
-    action="https://formspree.io/f/mbdalbkb"
-    method="POST"
-    style="display:none;"
-  >
-    <input type="hidden" name="buttonClicked" id="buttonClicked" />
-    <input type="hidden" name="page" value="Little Surprise Website" />
-  </form>
-
-  <script src="script.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>
