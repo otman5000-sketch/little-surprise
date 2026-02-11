@@ -1,8 +1,16 @@
+// Helper function to show a section smoothly
+function showSection(id) {
+  const section = document.getElementById(id);
+  section.style.display = "block";
+  setTimeout(() => {
+    section.scrollIntoView({ behavior: "smooth" });
+  }, 100);
+}
+
 // Function called by all buttons to pick an answer
 function pick(button) {
   const answerText = button.textContent || button.innerText;
 
-  // Show feedback on page
   const finalAnswer = document.getElementById('finalAnswer');
   finalAnswer.textContent = "You clicked: " + answerText;
   finalAnswer.style.opacity = 1;
@@ -10,9 +18,7 @@ function pick(button) {
 
 // Continue to next section
 function continueStory() {
-  const next = document.getElementById('nextSection');
-  next.style.display = 'block';
-  next.scrollIntoView({ behavior: 'smooth' });
+  showSection("nextSection");
 }
 
 // Section 2 buttons
@@ -21,40 +27,37 @@ function finalPick(button) {
   msg.textContent = "Good choice. This part matters.";
   msg.style.opacity = 1;
 
-  document.getElementById('memorySection').style.display = 'block';
-  document.getElementById('memorySection').scrollIntoView({ behavior: 'smooth' });
+  showSection("memorySection");
 }
 
 // Go to choice section
-function goToChoice(button) {
-  document.getElementById('choiceSection').style.display = 'block';
-  document.getElementById('choiceSection').scrollIntoView({ behavior: 'smooth' });
+function goToChoice() {
+  showSection("choiceSection");
 }
 
 // Choice yes/no buttons
-function chooseYes(button) {
-  document.getElementById('choiceResult').textContent = "Yeah… I knew it. There was never really a doubt, was there? 🙂";
+function chooseYes() {
+  document.getElementById('choiceResult').textContent =
+    "Yeah… I knew it. There was never really a doubt, was there? 🙂";
   document.getElementById('choiceResult').style.opacity = 1;
 
-  document.getElementById('finalStory').style.display = 'block';
   setTimeout(() => {
-    document.getElementById('finalStory').scrollIntoView({ behavior: 'smooth' });
+    showSection("finalStory");
   }, 600);
 }
 
-function chooseNo(button) {
-  document.getElementById('choiceResult').textContent = "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
+function chooseNo() {
+  document.getElementById('choiceResult').textContent =
+    "oh oh oh wasnt expecting that but oh well i respect it, just send me a message because this website actually doesnt give a real life feedback";
   document.getElementById('choiceResult').style.opacity = 1;
 }
 
 // Final story continuation
-function showFullStory(button) {
-  document.getElementById('fullStory').style.display = 'block';
-  document.getElementById('fullStory').scrollIntoView({ behavior: 'smooth' });
+function showFullStory() {
+  showSection("fullStory");
 }
 
 // Last section
-function showLastSection(button) {
-  document.getElementById('lastSection').style.display = 'block';
-  document.getElementById('lastSection').scrollIntoView({ behavior: 'smooth' });
+function showLastSection() {
+  showSection("lastSection");
 }
